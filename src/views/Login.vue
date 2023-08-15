@@ -1,4 +1,5 @@
 <template>
+    <br>
     <div class="flex min-h-screen w-screen w-full items-center justify-center text-gray-600 bg-gray-50">
         <div class="relative mt-8">
 
