@@ -40,7 +40,7 @@
         <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src="../assets/img/compass.jpeg" alt="" />
         <div class="flex w-full flex-col px-4 py-4">
           <span class="font-semibold">Compass Retrograde</span>
-          <span class="float-right text-gray-400">36-45</span>
+          <span class="float-right text-gray-400">40</span>
           <p class="text-lg font-bold">Rp.500.000</p>
         </div>
       </div>

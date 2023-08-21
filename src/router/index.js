@@ -7,6 +7,8 @@ import Contact from "../views/Contact.vue";
 import Cart from "../views/Cart.vue";
 import Checkout from "../views/Checkout.vue";
 import SingleProduk from "../views/SingleProduct.vue";
+import Brands from "../views/Brands.vue";
+import Category from "../views/Category.vue";
 
 const routes = [
     {
@@ -38,6 +40,16 @@ const routes = [
         path: "/contact",
         name: "Contact",
         component: Contact
+    },
+    {
+        path: "/brands",
+        name: "Brands",
+        component: Brands
+    },
+    {
+        path: "/category",
+        name: "Category",
+        component: Category
     },
     {
         path: "/login",
