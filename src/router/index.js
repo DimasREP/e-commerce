@@ -14,12 +14,14 @@ const routes = [
     {
         path: "/",
         name: "Home",
-        component: Home
+        component: Home,
+        
     },
     {
         path: "/produk",
         name: "Produk",
-        component: Produk
+        component: Produk,
+      
     },
     {
         path: '/produk/:id',
@@ -29,38 +31,45 @@ const routes = [
     {
         path: "/cart",
         name: "Cart",
-        component: Cart
+        component: Cart,
+        
     },
   
     {
         path: "/checkout",
         name: "Checkout",
-        component: Checkout
+        component: Checkout,
+        
     },
     {
         path: "/contact",
         name: "Contact",
-        component: Contact
+        component: Contact,
+        
     },
     {
         path: "/brands",
         name: "Brands",
-        component: Brands
+        component: Brands,
+       
     },
     {
         path: "/category",
         name: "Category",
-        component: Category
+        component: Category,
+        
     },
     {
         path: "/login",
         name: "Login",
         component: Login,
+       
     },
     {
         path: "/register",
         name: "Register",
         component: Register,
+        
     },
 ]
 
@@ -68,5 +77,6 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+
 
 export default router;
