@@ -20,7 +20,7 @@ const auth = {
         // Save token to localStorage
         localStorage.setItem('token', token);
         commit('SET_TOKEN', token);
-        console.log(token);
+        console.log("Token saved:", token);
         return true;
       } catch (error) {
         console.error(error);

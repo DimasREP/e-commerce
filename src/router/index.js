@@ -2,12 +2,13 @@ import { createWebHistory, createRouter } from "vue-router";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue"
 import Home from "../views/Home.vue";
-import Produk from "../views/Produk.vue";
+import Produk from "../views/Produk.vue"
 import Contact from "../views/Contact.vue";
 import Cart from "../views/Cart.vue";
 import Checkout from "../views/Checkout.vue";
 import Brands from "../views/Brands.vue";
 import Category from "../views/Category.vue";
+import SingleProduk from "../views/SingleProduk.vue";
 
 const routes = [
     {
@@ -21,10 +22,16 @@ const routes = [
         component: Produk
     },
     {
+        path: '/produk/:id',
+        name: 'SingleProduk',
+        component: SingleProduk
+    },
+    {
         path: "/cart",
         name: "Cart",
         component: Cart
     },
+  
     {
         path: "/checkout",
         name: "Checkout",

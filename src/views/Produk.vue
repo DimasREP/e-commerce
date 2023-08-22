@@ -1,299 +1,90 @@
 <template>
-    <br>
-    <br>
-    <br>
-    <!-- Header -->
-    <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
-    <title></title>
-</head>
-<body class="bg-gray-200 leanding-normal tracking-wide">
-
-    <h1 class="mx-12 my-10 text-gray-700 text-5xl lg:text-6xl text-center" style="font-family: 'Dancing Script', cursive, sans-serif;">
-        Wellcome
-    </h1>
-
-    <div class="container mx-auto w-full overflow-hidden relative">
-        <div class="w-full h-full absolute">
-            <div class="w-1/4 h-full absolute z-50 left-0" style="background: linear-gradient(to right, #edf2f7 0%, rgba(255, 255, 255, 0) 100%);"></div>
-            <div class="w-1/4 h-full absolute z-50 right-0" style="background: linear-gradient(to left, #edf2f7 0%, rgba(255, 255, 255, 0) 100%);"></div>
-        </div>
-
-        <div class="carousel-items flex items-center justify-center" style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;">
-
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <span class="text-teal-400 font-bold text-xl mb-3">Compass Retrograde</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"Sepatu Compass bestseller banyak di cari oleh konsumen dan ketceee"</p>
-                <router-link to="/Singleproduk">
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
-              </router-link>
-            </div>
-
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <p class="text-teal-400 font-bold text-xl mb-3">Compass x Pablo</p>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass2.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"kolaborasi Pablo dan Compass menampilkan desain sepatu dgn motif bintang-bintang"</p>
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
-            </div>
-
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <p class="text-teal-400 font-bold text-xl mb-3">Compass Velocity</p>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass3.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"Sneakers ini di-tweak lebih relevan dan up-to-date agar bisa nyamain style zaman sekarang"</p>
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
-            </div>
-
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <p class="text-teal-400 font-bold text-xl mb-3">Compass Linen</p>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass4.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"Sneakers ini hadir variasi low dan top dengan upper berbahan linen serta menampilkan siluet"</p>
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
-            </div>
-
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <p class="text-teal-400 font-bold text-xl mb-3">Compass High</p>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass6.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"Sneakers ini hadir variasi low dan top dengan bahan yang super nyaman digunakan"</p>
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
-            </div>
+       <div v-if="getProduk == undefined">Loading....</div>
+    <div v-else>
+    <div class="grid md:grid-cols-3 gap-8  mt-10 pl-5">
+        <div  v-for="product in getProduk.slice(1,7)" :key="product.id">
             
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <p class="text-teal-400 font-bold text-xl mb-3">Compass Slip On</p>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass7.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"Sepatu ini hadir juga dalam variasi slip on dengan warna sangat cocok digunakan pelajar"</p>
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
+        <div class="relative m-10 w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
+            <a href="#">
+                <img class="h-60 rounded-t-lg object-cover"
+                    src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                    alt="product image" />
+            </a>
+            <span
+                class="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">Sale</span>
+            <div class="mt-4 px-5 pb-5">
+                <a href="#">
+                    <h5 class="text-xl font-semibold tracking-tight text-slate-900">{{ product.name }}</h5>
+                </a>
+                <div class="mt-2.5 mb-5 flex items-center">
+                    <span class="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>
+                    <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="flex items-center justify-between">
+                    <p>
+                        <span class="text-3xl font-bold text-slate-900">Rp.{{ product.base_price }}</span>
+                    
+                    </p>
+                </div>
+                <div>
+                    <router-link :to="{ name: 'SingleProduk', params: { id: product.id } }" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 mt-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      Detail Product
+                    </router-link>
+                </div>
             </div>
-
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <p class="text-teal-400 font-bold text-xl mb-3">Compass Retrograde</p>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"Sepatu Compass bestseller banyak di cari oleh konsumen dan ketceee"</p>
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
-            </div>
-
-            <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-                <svg class="fill-current text-teal-400 hover:text-teal-500 cursor-pointer h-12 w-12 absolute top-0 right-0 mt-2 -mr-5" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.5 0C17.847 0 23 5.153 23 11.5S17.847 23 11.5 23 0 17.847 0 11.5 5.153 0 11.5 0zm0 1C17.295 1 22 5.705 22 11.5S17.295 22 11.5 22 1 17.295 1 11.5 5.705 1 11.5 1zm.5 10h6v1h-6v6h-1v-6H5v-1h6V5h1v6z"/></svg>
-                <!-- <button class="absolute top-0 right-0 bg-teal-400 rounded-full px-1 py-0 font-bold text-lg">+</button> -->
-                <p class="text-teal-400 font-bold text-xl mb-3">Compass x Pablo</p>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="../assets/img/compass2.jpeg" alt="Img">
-                <p class="mt-3 text-gray-600 text-center">"kolaborasi Pablo dan Compass menampilkan desain sepatu dgn motif bintang-bintang"</p>
-                <button class="mt-4 mb-2 bg-teal-400 rounded-full px-12 py-1 text-gray-100 font-semibold hover:bg-teal-300 focus:outline-none">Detail</button>
-            </div>
-
-            
         </div>
-
-    </div>
-    
-</body>
-</html>
-<br>
-<!-- Produk -->
-<center>
-    <h1
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-     PRODUK DENGAN PENJUALAN TERBAIK  
-    </h1>
-  </center>
- 
-    <div class="grid grid-cols-3 gap-8 ml-12">
-    <div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-  <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="/Singleproduk">
-    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="../assets/img/compass.jpeg" alt="product image" />
-    <svg class="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" /></svg>
-  </a>
-
-  <div class="mt-4 px-5 pb-5">
-    
-    <a href="#">
         
-      <h5 class="text-xl tracking-tight text-slate-900">Compass Retrogade</h5>
-    </a>
-    <div class="mt-2 mb-5 flex items-center justify-between">
-      <p>
-        <span class="text-3xl font-bold text-slate-900">Rp.500.000</span>
-        <span class="text-sm text-slate-900 line-through">Rp.2.000.000</span>
-      </p>
-    </div>
-    <a href="/cart" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      Add to cart</a
-    >
   </div>
-</div>
-<div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-  <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="../assets/img/compass2.jpeg" alt="product image" />
-    <svg class="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" /></svg>
-  </a>
-  <div class="mt-4 px-5 pb-5">
-    <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Compass X Pablo</h5>
-    </a>
-    <div class="mt-2 mb-5 flex items-center justify-between">
-      <p>
-        <span class="text-3xl font-bold text-slate-900">Rp.1.500.000</span>
-        <span class="text-sm text-slate-900 line-through">Rp.1.800.000</span>
-      </p>
-    </div>
-    <a href="#" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      Add to cart</a
-    >
   </div>
-</div>
-<div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-  <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="../assets/img/compass3.jpeg" alt="product image" />
-    <svg class="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" /></svg>
-  </a>
-  <div class="mt-4 px-5 pb-5">
-    <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Compass Velocity</h5>
-    </a>
-    <div class="mt-2 mb-5 flex items-center justify-between">
-      <p>
-        <span class="text-3xl font-bold text-slate-900">Rp.870.000</span>
-        <span class="text-sm text-slate-900 line-through">Rp.1.000.000</span>
-      </p>
-    </div>
-    <a href="#" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      Add to cart</a
-    >
+  
   </div>
-</div>
-
-<div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-  <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="../assets/img/compass4.jpeg" alt="product image" />
-    <svg class="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" /></svg>
-  </a>
-  <div class="mt-4 px-5 pb-5">
-    <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Compass Linen</h5>
-    </a>
-    <div class="mt-2 mb-5 flex items-center justify-between">
-      <p>
-        <span class="text-3xl font-bold text-slate-900">Rp.538.000</span>
-        <span class="text-sm text-slate-900 line-through">Rp.800.000</span>
-      </p>
-    </div>
-    <a href="#" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      Add to cart</a
-    >
-  </div>
-</div>
-<div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-  <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="../assets/img/compass6.jpeg" alt="product image" />
-    <svg class="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" /></svg>
-  </a>
-  <div class="mt-4 px-5 pb-5">
-    <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Compass Retrograde High </h5>
-    </a>
-    <div class="mt-2 mb-5 flex items-center justify-between">
-      <p>
-        <span class="text-3xl font-bold text-slate-900">Rp.580.000</span>
-        <span class="text-sm text-slate-900 line-through">Rp.600.000</span>
-      </p>
-    </div>
-    <a href="#" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      Add to cart</a
-    >
-  </div>
-</div>
-<div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-  <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="../assets/img/compass7.jpeg" alt="product image" />
-    <svg class="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" /></svg>
-  </a>
-  <div class="mt-4 px-5 pb-5">
-    <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Compass Retrograde Slip On</h5>
-    </a>
-    <div class="mt-2 mb-5 flex items-center justify-between">
-      <p>
-        <span class="text-3xl font-bold text-slate-900">Rp.450.000</span>
-        <span class="text-sm text-slate-900 line-through">Rp.700.000</span>
-      </p>
-    </div>
-    <a href="#" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      Add to cart</a
-    >
-  </div>
-</div>
-</div>
-
-
-
-
-</template>
-
-<style>
-
-@keyframes carouselAnim {
-  from {
-    transform: translate(0, 0);
+  </template>
+  <script>
+  import { mapGetters, mapActions } from 'vuex';
+    
+    export default {
+        computed: {
+            ...mapGetters('product', ['getProduk']),
+        },
+        methods: {
+            ...mapActions('product', ['fetchProduk']),
+    },
+    created(){
+        this.fetchProduk();
+    }
   }
-  to {
-    transform: translate(calc(-100% + (6*300px)));
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .container .carousel-items {
-    animation: carouselAnim 60s infinite alternate linear;
-  }
-  @keyframes carouselAnim {
-    from {
-      transform: translate(0, 0);
-    }
-    to {
-      transform: translate(calc(-100% + (5*300px)));
-    }
-  }
-}
-
-.carousel-focus:hover {
-  transition: all 0.8s;
-  transform: scale(1.1);
-}
-</style>
+  </script>
