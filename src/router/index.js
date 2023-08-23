@@ -25,7 +25,7 @@ const routes = [
       
     },
     {
-        path: '/produk/:id',
+        path: '/produk/:slug',
         name: 'SingleProduk',
         component: SingleProduk
     },
