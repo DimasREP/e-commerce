@@ -4,9 +4,11 @@ const auth = {
   namespaced: true,
   state: {
     token: localStorage.getItem('token') || '',
+   loginError:null,
   },
   getters: {
     isAuthenticated: (state) => !!state.token,
+   
   },
   actions: {
     async login({ commit }, credentials) {
@@ -16,11 +18,13 @@ const auth = {
           credentials
         );
         const token = response.data.access_token;
+      
 
         // Save token to localStorage
         localStorage.setItem('token', token);
+
         commit('SET_TOKEN', token);
-        console.log("Token saved:", token);
+        console.log("token saved:", token);
         return true;
       } catch (error) {
         console.error(error);
@@ -34,21 +38,23 @@ const auth = {
           credentials
         );
         const token = response.data.access_token;
-        const user = response.data.user;
+    
 
         
         localStorage.setItem('token', token);
-        localStorage.setItem("user", JSON.stringify(user));
+   
 
         commit('SET_TOKEN', token);
+        commit('SET_LOGIN_ERROR',null);
         console.log("token saved:", token);
         return true;
       } catch (error) {
+        const errorMessage =error.response.data.message || "Login failed";
+        commit("SET_LOGIN_ERROR",errorMessage);
         console.error(error);
         return false;
       }
     },
-
     logout({ commit }) {
       // Remove token from localStorage
       const token = localStorage.getItem('token');
@@ -56,13 +62,19 @@ const auth = {
       commit('SET_TOKEN', '');
       //   Log Token removed
       console.log('Token Removed:', token);
-      window.location.href = "/login";
+     this.$router.push("/login");
     },
+
+    
+    
   },
   mutations: {
     SET_TOKEN(state, token) {
       state.token = token;
     },
+    SET_LOGIN_ERROR(state,error){
+      state.loginError = error;
+    }
   },
 };
 
