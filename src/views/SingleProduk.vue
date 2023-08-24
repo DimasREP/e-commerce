@@ -3,6 +3,40 @@
  <section class="py-12 sm:py-16">
     <div v-if="product">
       <div class="container mx-auto px-4">
+        <nav class="flex">
+          <ol role="list" class="flex items-center">
+            <li class="text-left">
+              <div class="-m-1">
+                <a href="#"
+                  class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800">
+                  Home </a>
+              </div>
+            </li>
+
+            <li class="text-left">
+              <div class="flex items-center">
+                <span class="mx-2 text-gray-400">/</span>
+                <div class="-m-1">
+                  <a href="#"
+                    class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800">
+                    Products </a>
+                </div>
+              </div>
+            </li>
+
+            <li class="text-left">
+              <div class="flex items-center">
+                <span class="mx-2 text-gray-400">/</span>
+                <div class="-m-1">
+                  <a href="#"
+                    class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800"
+                    aria-current="page"> Coffee </a>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </nav>
+
         <div class="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
           <div class="lg:col-span-3 lg:row-end-1">
             <div class="lg:flex lg:items-start">
@@ -24,7 +58,7 @@
                   </button>
                   <button type="button"
                     class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                    <img class="h-full w-full object-cover" src="/images/JHxMnVrtPMdcNU1s_7g7f.png" alt="" />
+                    <img class="h-full w-full object-cover" src="" alt="" />
                   </button>
                 </div>
               </div>
@@ -153,19 +187,19 @@
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
-                  + Keranjang
+                  + Cart
                 </button>
               </div>
 
               <div v-else>
-              <router-link to="/cart">
+              <router-link to="/login">
                 <button type="button"
                   class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
                   <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
-                  + keranjang
+                  + Cart
                 </button>
               </router-link>
             </div>

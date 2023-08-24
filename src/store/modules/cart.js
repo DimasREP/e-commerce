@@ -22,8 +22,8 @@ const cart = {
                     }
 
                 );
-                console.log(dataCart.data['cart_items'])
-                commit("SET_CART", dataCart.data['cart_items']);
+                console.log(dataCart.data['cart_items'].data)
+                commit("SET_CART", dataCart.data['cart_items'].data);
             } catch (error) {
                 alert(error);
                 console.log(error);
@@ -32,7 +32,7 @@ const cart = {
     },
     mutations: {
         SET_CART(state, cart) {
-            state.dataBrands = cart;
+            state.cart = cart;
         }
     },
 };
