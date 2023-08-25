@@ -19,9 +19,10 @@ const cart = {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
-                }
+                },
 
                 );
+            
                 console.log(dataCart.data.cart_items.data)
                 commit("SET_CART", dataCart.data.cart_items.data);
             } catch (error) {
@@ -30,12 +31,33 @@ const cart = {
             }
         },
 
-        
+        async removeFromCart({ commit, dispatch }, cartId) {
+            try {
+                const response = await axios.post(
+                    "https://ecommerce.olipiskandar.com/api/v1/carts/destroy", 
+                    {
+                    cart_id: cartId,
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                },
+
+                );
+            
+                console.log(response.data.message);
+                dispatch("fetchCart");
+            } catch (error) {
+                alert("error removing item from cart");
+                console.log(error);
+            }
+        },
     },
     mutations: {
         SET_CART(state, cart) {
             state.cart = cart;
         }
+       
     },
 };
 export default cart;
