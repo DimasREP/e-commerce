@@ -1,7 +1,6 @@
 <template>
-  <br>
- <section class="py-12 sm:py-16">
-    <div v-if="product">
+  <section class="py-12 sm:py-16">
+    <div v-if="products">
       <div class="container mx-auto px-4">
         <nav class="flex">
           <ol role="list" class="flex items-center">
@@ -42,33 +41,32 @@
             <div class="lg:flex lg:items-start">
               <div class="lg:order-2 lg:ml-5">
                 <div class="max-w-xl overflow-hidden rounded-lg">
-                  <img class="h-full w-full max-w-full object-cover" src="https://ecommerce.olipiskandar.com/public/uploads/all/UpUx213sXC5XBW07vbXn1vkWMWxTu95CDDbMzwkF.jpg" alt="" />
+                  <img class="h-full w-full max-w-full object-cover" src="" alt="" />
                 </div>
               </div>
 
               <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
                 <div class="flex flex-row items-start lg:flex-col">
-                  <button type="button"
+                  <!-- <button type="button"
                     class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-900 text-center">
-                    <img class="h-full w-full object-cover" src="" alt="" />
+                    <img class="h-full w-full object-cover" src="/images/JHxMnVrtPMdcNU1s_7g7f.png" alt="" />
                   </button>
                   <button type="button"
                     class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                    <img class="h-full w-full object-cover" src="" alt="" />
+                    <img class="h-full w-full object-cover" src="/images/JHxMnVrtPMdcNU1s_7g7f.png" alt="" />
                   </button>
                   <button type="button"
                     class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                    <img class="h-full w-full object-cover" src="" alt="" />
-                  </button>
+                    <img class="h-full w-full object-cover" src="/images/JHxMnVrtPMdcNU1s_7g7f.png" alt="" />
+                  </button> -->
                 </div>
               </div>
             </div>
           </div>
 
           <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-            <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">{{ product.name }}</h1>
-             <span>{{ product.slug }}</span>
-             
+            <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">{{ products.name }}</h1>
+
             <div class="mt-5 flex items-center">
               <div class="flex items-center">
                 <svg class="block h-4 w-4 align-middle text-yellow-500" xmlns="http://www.w3.org/2000/svg"
@@ -154,10 +152,10 @@
 
             <!-- counter -->
             <div class="flex items-center mt-5">
-              <button class="border rounded-md py-2 px-4 mr-2">-</button>
-              <input type="number" min="1" value="1" class="  text-center w-20 border rounded-md py-2 px-2  ">
+              <button class="border rounded-md py-2 px-4 mr-2" @click="kurang">-</button>
+              <span class="text-center w-20 border rounded-md py-2 px-2">{{ cek }}</span>
               <!-- <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="2" min="1"> -->
-              <button class="border rounded-md py-2 px-4 ml-2">+</button>
+              <button class="border rounded-md py-2 px-4 ml-2" @click="tambah">+</button>
             </div>
 
 
@@ -176,12 +174,12 @@
             <div
               class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
               <div class="flex items-end">
-                <h1 class="text-3xl font-bold">$60.50</h1>
-                <span class="text-base">/month</span>
+                <h1 class="text-3xl font-bold">Rp.{{ products.base_price * cek }}</h1>
+                
               </div>
 
               <div v-if="token">
-                <button type="button"
+                <button type="button" @click="addCart(products.id)"
                   class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
                   <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -271,33 +269,57 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-   data(){
+  data(){
     return {
-      token : null
+      token : null,
+      cek : 1
     }
   },
   computed: {
-    ...mapGetters("product", ["getProdukBySlug"]),
-    product() {
-      return this.getProdukBySlug(this.$route.params.slug);
+    ...mapGetters("product", ["getProdukSlug"]),
+    products() {
+      return this.getProdukSlug(this.$route.params.slug);
     },
   },
   methods: {
     ...mapActions("product", ["fetchSingleProduk"]),
     ...mapActions("product", ["fetchProduk"]),
-    ...mapActions("cart", ["fetchCart"])
+    ...mapActions("cart", ["fetchCart"]),
+    ...mapActions("product",["addCart"]),
+
+    async addCart(productId) {
+      try {
+        await this.$store.dispatch('product/addCart', productId);
+        this.fetchCart();
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
+    tambah(){
+      this.cek++
+    },
+    kurang(){
+      if(this.cek > 1){
+      this.cek--
+      }
+    }
+
   },
   beforeMount() {
-    this.fetchProduk();
+    this.fetchProduk()
     this.fetchCart()
+   
   },
-  mounted() {
-    const produkSlug = this.$route.params.slug;
-    this.fetchSingleProduk(produkSlug);
-
-     //cek token
-     const cektoken = localStorage.getItem('token');
+  mounted(){
+      const Slug = this.$route.params.slug;
+      this.fetchSingleProduk(Slug)
+      
+      //cek token
+      const cektoken = localStorage.getItem('token');
       this.token = cektoken
-  },
+    }
+
+
 };
 </script>
