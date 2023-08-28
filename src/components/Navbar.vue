@@ -5,9 +5,15 @@
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center">
           <img src="../assets/img/logo.png" class="h-8 mr-3" alt="Flowbite Logo">
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dimass.</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DimDim.</span>
         </a>
         <div class="flex md:order-2">
+              <a href="/profile"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                <img
+                  src="https://img.freepik.com/premium-vector/flat-instagram-icons-notifications_619991-50.jpg?size=626&ext=jpg&ga=GA1.1.292088139.1690524549&semt=ais"
+                  class="h-8 mr-3" alt="Flowbite Logo">
+              </a>  
           <div v-if="isAuthenticated">
            <Cart />
           </div>
