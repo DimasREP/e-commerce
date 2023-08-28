@@ -7,7 +7,7 @@
           <ol role="list" class="flex items-center">
             <li class="text-left">
               <div class="-m-1">
-                <a href="#"
+                <a href="/"
                   class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800">
                   Home </a>
               </div>
@@ -17,9 +17,9 @@
               <div class="flex items-center">
                 <span class="mx-2 text-gray-400">/</span>
                 <div class="-m-1">
-                  <a href="#"
+                  <a href="/produk"
                     class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800">
-                    Products </a>
+                    Produk </a>
                 </div>
               </div>
             </li>
@@ -28,9 +28,9 @@
               <div class="flex items-center">
                 <span class="mx-2 text-gray-400">/</span>
                 <div class="-m-1">
-                  <a href="#"
+                  <a href="/cart"
                     class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800"
-                    aria-current="page"> Coffee </a>
+                    aria-current="page">Cart</a>
                 </div>
               </div>
             </li>
@@ -42,24 +42,24 @@
             <div class="lg:flex lg:items-start">
               <div class="lg:order-2 lg:ml-5">
                 <div class="max-w-xl overflow-hidden rounded-lg">
-                  <img class="h-full w-full max-w-full object-cover" src="" alt="" />
+                  <img class="h-full w-full max-w-full object-cover" src="https://ecommerce.olipiskandar.com/public/uploads/all/UpUx213sXC5XBW07vbXn1vkWMWxTu95CDDbMzwkF.jpg" alt="" />
                 </div>
               </div>
 
               <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
                 <div class="flex flex-row items-start lg:flex-col">
-                  <!-- <button type="button"
+                  <button type="button"
                     class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-900 text-center">
-                    <img class="h-full w-full object-cover" src="/images/JHxMnVrtPMdcNU1s_7g7f.png" alt="" />
+                    <img class="h-full w-full object-cover" src="https://ecommerce.olipiskandar.com/public/uploads/all/UpUx213sXC5XBW07vbXn1vkWMWxTu95CDDbMzwkF.jpg" alt="" />
                   </button>
                   <button type="button"
                     class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                    <img class="h-full w-full object-cover" src="/images/JHxMnVrtPMdcNU1s_7g7f.png" alt="" />
+                    <img class="h-full w-full object-cover" src="https://ecommerce.olipiskandar.com/public/uploads/all/UpUx213sXC5XBW07vbXn1vkWMWxTu95CDDbMzwkF.jpg" alt="" />
                   </button>
                   <button type="button"
                     class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                    <img class="h-full w-full object-cover" src="/images/JHxMnVrtPMdcNU1s_7g7f.png" alt="" />
-                  </button> -->
+                    <img class="h-full w-full object-cover" src="https://ecommerce.olipiskandar.com/public/uploads/all/UpUx213sXC5XBW07vbXn1vkWMWxTu95CDDbMzwkF.jpg" alt="" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@
               </label>
             </div>
 
-            <h2 class="mt-8 text-base text-gray-900">Choose subscription</h2>
+            <!-- <h2 class="mt-8 text-base text-gray-900">Choose subscription</h2>
             <div class="mt-3 flex select-none flex-wrap items-center gap-1">
               <label class="">
                 <input type="radio" name="subscription" value="4 Months" class="peer sr-only" />
@@ -149,7 +149,7 @@
                   12 Months</p>
                 <span class="mt-1 block text-center text-xs">$40/mo</span>
               </label>
-            </div>
+            </div> -->
 
             <!-- counter -->
             <div class="flex items-center mt-5">

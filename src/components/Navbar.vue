@@ -5,7 +5,7 @@
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center">
           <img src="../assets/img/logo.png" class="h-8 mr-3" alt="Flowbite Logo">
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DimDim.</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">AestheticGlo.</span>
         </a>
         <div class="flex md:order-2">
               <a href="/profile"

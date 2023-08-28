@@ -1,4 +1,7 @@
 <template>
+  <div class="mt-20 text-center">
+        <span class="font-bold text-4xl">All Produk</span>
+        </div>
   <div v-if="getProduk == undefined">Loading....</div>
   <div v-else>
     <div class="grid md:grid-cols-3 gap-8 mt-10 pl-5">
@@ -96,21 +99,13 @@
                 :to="{ name: 'SingleProduk', params: { slug: product.slug } }"
                 class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 mt-5"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="mr-2 h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
-                </svg>
-                Details
+                Detail Produk 
+                <svg class="group-hover:ml-8 ml-4 transition-all" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.912 12H4L2.023 4.135A.662.662 0 0 1 2 3.995c-.022-.721.772-1.221 1.46-.891L22 12L3.46 20.896c-.68.327-1.464-.159-1.46-.867a.66.66 0 0 1 .033-.186L3.5 15" /></svg>
               </router-link>
             </div>
           </div>
