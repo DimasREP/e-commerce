@@ -4,9 +4,13 @@ const auth = {
   namespaced: true,
   state: {
     token: localStorage.getItem('token') || '',
+    loginError: null,
+    user: JSON.stringify(localStorage.getItem("user") || null),
   },
   getters: {
     isAuthenticated: (state) => !!state.token,
+    getUser: (state) => state.user,
+    getUserAddress: (state) => state.userAddress,
   },
   actions: {
     async login({ commit }, credentials) {
@@ -20,9 +24,12 @@ const auth = {
         // Save token to localStorage
         localStorage.setItem('token', token);
         commit('SET_TOKEN', token);
-        console.log(token);
+        commit("SET_LOGIN_ERROR", null);
+        
         return true;
       } catch (error) {
+        const errorMessage = error.response.data.message || "Login failed";
+        commit("SET_LOGIN_ERROR", errorMessage); // Set error message in store
         console.error(error);
         return false;
       }
@@ -38,13 +45,49 @@ const auth = {
         // Save token to localStorage
         localStorage.setItem('token', token);
         commit('SET_TOKEN', token);
-        console.log(token);
+        console.log("Token saved:", token);
+
         return true;
       } catch (error) {
         console.error(error);
         return false;
       }
     },
+
+    async getUserInfo({ state }) {
+      try {
+        const response = await axios.get(
+          "https://ecommerce.olipiskandar.com/api/v1/user/info",
+          {
+            headers: {
+              Authorization: `Bearer ${state.token}`,
+            },
+          }
+        );
+        return response.data.user;
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+    },
+
+    async getUserAddress({ state }) {
+      try {
+        const response = await axios.get(
+          'https://ecommerce.olipiskandar.com/api/v1/user/addresses',
+          {
+            headers: {
+              Authorization: `Bearer ${state.token}`,
+            },
+          }
+        );
+       return response.data;
+      } catch (error) {
+      console.error(error);
+      return null;
+    }
+  },
+
     logout({ commit }) {
       // Remove token from localStorage
       const token = localStorage.getItem('token');
@@ -58,6 +101,12 @@ const auth = {
   mutations: {
     SET_TOKEN(state, token) {
       state.token = token;
+    },
+    SET_LOGIN_ERROR(state, error) {
+      state.loginError = error;
+    },
+    SET_USER(state, user) {
+      state.user = user;
     },
   },
 };

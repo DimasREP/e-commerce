@@ -1,4 +1,5 @@
 <template>
+  <br>
   <div>
     
     <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
@@ -14,9 +15,9 @@
             </div>
             <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
               <div class="flex items-center border-gray-100">
-                <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"  @click=""> - </span>
-                <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="" value="2" min="1" />
-                <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"  @click=""> + </span>
+                <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"  @click="changeQty({cartId: cart.cart_id, typeQty: 'minus'})"> - </span>
+                <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="" :value="cart.qty" min="1" />
+                <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" @click="changeQty({cartId: cart.cart_id, typeQty: 'plus'})"> + </span>
               </div>
               <div class="flex items-center space-x-4">
                 <p class="text-sm">Rp. {{ cart.regular_price }}</p>
@@ -35,23 +36,25 @@
       </div>
       <!-- Sub total -->
       <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+        
         <div class="mb-2 flex justify-between">
           <p class="text-gray-700">Subtotal</p>
           <p class="text-gray-700">{{totalHarga()}}</p>
         </div>
-        <div class="flex justify-between">
-          <p class="text-gray-700">Shipping</p>
-          <p class="text-gray-700">5000</p>
-        </div>
+
         <hr class="my-4" />
+        
         <div class="flex justify-between">
           <p class="text-lg font-bold">Total</p>
           <div class="">
-            <p class="mb-1 text-lg font-bold">{{totalHarga()}}</p>
+            <p class="mb-1 text-lg font-bold">{{totalHarga() }}</p>
            
           </div>
         </div>
+        <router-link to="/checkout">
         <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+    </router-link>
+
       </div>
     </div>
 
@@ -62,6 +65,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
+
     computed: {
         ...mapGetters('cart', ['getCart']),
        
@@ -69,22 +73,21 @@ export default {
 
     methods: {
         ...mapActions('cart', ['fetchCart']),
-        ...mapActions('produk', ['fetchProduk']),
+        ...mapActions('product', ['fetchProduk']),
         // ...mapActions('produk', ['addToCart']),
    
         totalHarga() {
           this.total = this.getCart.reduce((acc, produk) => {
-            return acc + parseFloat(produk.regular_price);
+            return acc + parseFloat(produk.regular_price * produk.qty);
           }, 0);
-          return this.total.toFixed(2);
+          return this.total.toFixed(1);
         },
-
-   
-        
-    
     // remove cart
     removeItem(cartId) {
       this.$store.dispatch('cart/removeFromCart', cartId);
+    },  
+    changeQty(cartId, typeQty) {
+      this.$store.dispatch('cart/changeQuantity', cartId,typeQty);
     },  
   },
   

@@ -28,4 +28,4 @@ const brands = {
     }
 }
 
-export default brands;
+export default brands;

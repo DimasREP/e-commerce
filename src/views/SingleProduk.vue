@@ -1,4 +1,5 @@
 <template>
+  <br>
   <section class="py-12 sm:py-16">
     <div v-if="products">
       <div class="container mx-auto px-4">
