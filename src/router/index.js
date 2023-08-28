@@ -10,19 +10,32 @@ import Brands from "../views/Brands.vue";
 import Category from "../views/Category.vue";
 import SingleProduk from "../views/SingleProduk.vue";
 import Profile from "../views/Profile.vue";
+import Order from "../views/Order.vue";
 
 const routes = [
     {
         path: "/",
         name: "Home",
         component: Home,
-        
+        meta: { requireLogin: true },
+    },
+    {
+        path: "/login",
+        name: "Login",
+        component: Login,
+        meta: { requireGuest: true },
+    },
+    {
+        path: "/register",
+        name: "Register",
+        component: Register,
+        meta: { requireGuest: true },
     },
     {
         path: "/produk",
         name: "Produk",
         component: Produk,
-      
+        meta: { requireLogin: true },
     },
     {
         path: '/produk/:slug',
@@ -33,7 +46,7 @@ const routes = [
         path: "/cart",
         name: "Cart",
         component: Cart,
-        
+        meta: { requireLogin: true },
     },
   
     {
@@ -68,17 +81,13 @@ const routes = [
         
     },
     {
-        path: "/login",
-        name: "Login",
-        component: Login,
-       
+        path: "/order/:orderCode",
+        name: "Order",
+        component: Order,
+        props: true,
+        
     },
-    {
-        path: "/register",
-        name: "Register",
-        component: Register,
-      
-    },
+   
 ]
 
 const router = createRouter({

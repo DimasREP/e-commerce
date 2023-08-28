@@ -102,6 +102,7 @@ export default {
       return {
           email: '',
           password: '',
+          
       };
   },
   computed :{
@@ -113,6 +114,7 @@ export default {
           const credentials = {
               email: this.email,
               password: this.password,
+
           };
 
           const success = await this.login(credentials);

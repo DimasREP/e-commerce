@@ -4,11 +4,13 @@ const cart = {
     namespaced: true,
     state: {
       cart: [],
+      dataCheckout : []
     },
     
     getters:{
-        getCart: (state) => state.cart
-     },
+        getCart: (state) => state.cart,
+        getCheckout: (state) => state.dataCheckout
+    },  
     actions:{
         async fetchCart({commit}) {
             try {
@@ -94,6 +96,7 @@ const cart = {
                 }
               );
               console.log(response.data.message);
+              commit('SET_CHECKOUT' ,response.data)
               dispatch("fetchCart");
             } catch (error) {
               alert("Error");
@@ -104,6 +107,9 @@ const cart = {
     mutations:{
         SET_CART(state, cart) {
             state.cart = cart
+        },
+        SET_CHECKOUT(state, checkout) {
+            state.dataCheckout = checkout
         }
     }
 

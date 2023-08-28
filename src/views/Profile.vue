@@ -8,6 +8,7 @@
       <div class="ml-4 w-56">
         <p class="text-slate-800 text-xl font-extrabold">{{ getUser.name }}</p>
         <p class="text-slate-500">{{ getUser.email }}</p>
+        
       </div>
     </div>
     <button class="flex items-center justify-center gap-1 rounded-lg border border-emerald-500 px-4 py-2 font-medium text-emerald-500 focus:outline-none focus:ring hover:bg-emerald-100">
