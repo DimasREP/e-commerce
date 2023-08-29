@@ -11,13 +11,13 @@ import Category from "../views/Category.vue";
 import SingleProduk from "../views/SingleProduk.vue";
 import Profile from "../views/Profile.vue";
 import Order from "../views/Order.vue";
+import store from "../store";
 
 const routes = [
     {
         path: "/",
         name: "Home",
         component: Home,
-        meta: { requireLogin: true },
     },
     {
         path: "/login",
@@ -35,7 +35,7 @@ const routes = [
         path: "/produk",
         name: "Produk",
         component: Produk,
-        meta: { requireLogin: true },
+  
     },
     {
         path: '/produk/:slug',
@@ -93,6 +93,22 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+});
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requireGuest && store.getters["auth/isAuthenticated"]) {
+        next("/");
+    } else {
+        next();
+    }
+});
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requireLogin && !store.getters["auth/isAuthenticated"]) {
+        next("/login");
+    } else {
+        next();
+    }  
 });
 function cekToken(to, from, next) {
     var isAuthenticated = false;
